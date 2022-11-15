@@ -1,17 +1,17 @@
 from django import forms
 
     
-class club_deportivo(forms.Form):
+class club_deportivoForm(forms.Form):
     deporte = forms.CharField(max_length = 40)
     nombre = forms.CharField(max_length = 40)
     
-class profesor(forms.Form):
+class profesorForm(forms.Form):
     deporte = forms.CharField(max_length = 40)
     nombre = forms.CharField(max_length = 40)
     DNI = forms.IntegerField()
 
 
-class alumno(forms.Form):
+class alumnoForm(forms.Form):
     deporte = forms.CharField(max_length = 40)
     nombre = forms.CharField(max_length = 40)
     DNI = forms.IntegerField()

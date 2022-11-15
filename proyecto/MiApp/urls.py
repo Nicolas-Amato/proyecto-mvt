@@ -1,6 +1,6 @@
 from django.urls import path
 from MiApp.views import mostrar_index, nuevo_deporte, nuevo_profesor, nuevo_alumno, buscar_profesor 
-from MiApp.forms import club_deportivoForm, profesorForm, alumnoForm
+from .forms import club_deportivoForm, profesorForm, alumnoForm
 
 
 urlpatterns = [
