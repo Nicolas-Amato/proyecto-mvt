@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class club_deportivo(models.Model):
     deporte = models.CharField(max_length = 40)
     nombre = models.CharField(max_length = 40)
