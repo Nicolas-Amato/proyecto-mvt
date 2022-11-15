@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from models import profesor, club_deportivo, alumno
-from forms import club_deportivoForm, profesorForm, alumnoForm
+from .models import profesor, club_deportivo, alumno
+from .forms import club_deportivoForm, profesorForm, alumnoForm
 
 
 def mostrar_index(request):
@@ -20,7 +20,7 @@ def nuevo_deporte(request):
    if request.method == 'POST':
       
       formulario_ND = club_deportivoForm(request.POST)
-      
+   
       if formulario_ND.is_valid():
          
          formulario_ND_limpio = formulario_ND.cleaned_data
