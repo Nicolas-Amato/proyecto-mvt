@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import club_deportivo, profesor, alumno
-from .forms import club_deportivoForm, profesorForm, alumnoForm
+from models import club_deportivo, profesor, alumno
+from forms import club_deportivoForm, profesorForm, alumnoForm
 
 
 def mostrar_index(request):
