@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from models import club_deportivo, profesor, alumno
+from models import profesor, club_deportivo, alumno
 from forms import club_deportivoForm, profesorForm, alumnoForm
 
 
