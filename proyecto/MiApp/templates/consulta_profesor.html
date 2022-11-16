@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block codigoDinamico %} 
+
+<form action="" method="get"> 
+
+   
+    <p>                                                 Consulta info. Deportes                                         </p>
+
+    
+    <input type="text" name="deporte" id="deporte">
+  
+    <input type="button">
+</form>
+
+{% if  profesor %}
+
+   <ul>
+    {% for profesor in profesor %}
+        <li> deporte a cargo del profesor {{deporte}}/li>
+   </ul>
+{% else %}
+    <p>no hay datos ingresados...</p>
+
+{% endif %}   
+
+{% endblock %}
