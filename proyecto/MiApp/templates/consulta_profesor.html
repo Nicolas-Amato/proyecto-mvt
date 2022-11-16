@@ -9,11 +9,11 @@
     <input type='submit' value='enviar'></button> 
 </form>
 
-{% if  profesor %}
+{% if  consulta_profesor %}
 
    <ul>
-    {% for profesor in profesor %}
-        <li> deporte a cargo del profesor {{deporte}} </li>
+    {% for profesor in consulta_profesor %}
+        <li> deporte a cargo del profesor {{profesor.deporte}} </li>
     {% endfor %}
    </ul>
 {% else %}
