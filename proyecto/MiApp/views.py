@@ -7,6 +7,8 @@ from .forms import club_deportivoForm, profesorForm, alumnoForm
 def mostrar_index(request):
    return render(request, 'index.html')
 
+######### BUSQUEDAS ##########
+
 
 def buscar_profesor(request):
 
@@ -14,8 +16,20 @@ def buscar_profesor(request):
    
    return render(request, 'consulta_profesor.html' ,{'profesor':[consulta_profesor]})
 
+def buscar_CLUB(request):
+
+   if request.GET.get('deporte', False):
+      deporte = request.GET['deporte']
+      CLUB = club_deportivo.objects.filter(club_deportivo__icontains=club_deportivo)
+      return render(request, 'consulta_deporte.html', {'CLUB': CLUB})
+
+   else:
+      respuesta = 'no hay datos ingresados...'
+      return render(request, 'consulta_deporte.html', {'respuesta': respuesta})
 
 
+
+######### INGRESOS DE DEPORTE ##########
 def nuevo_deporte(request):
    if request.method == 'POST':
       
@@ -36,6 +50,7 @@ def nuevo_deporte(request):
       
    return render(request, 'nuevo_deporte.html', {'formulario_ND': formulario_ND})
 
+######### INGRESOS DE PROFESORES ##########
 def nuevo_profesor(request):
    if request.method == 'POST':
       
@@ -56,7 +71,7 @@ def nuevo_profesor(request):
       
    return render(request, 'nuevo_profesor.html', {'formulario_NP': formulario_NP})
 
-
+######### INGRESOS DE ALUMNOSS ##########
 def nuevo_alumno(request):
    if request.method == 'POST':
       
