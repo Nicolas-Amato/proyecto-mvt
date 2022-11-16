@@ -13,9 +13,10 @@
 
    <ul>
     {% for profesor in consulta_profesor %}
-        <li> deporte a cargo del profesor {{profesor.deporte}} </li>
+        <li> deporte a cargo del profesor {{profesor.nombre}} </li>
     {% endfor %}
    </ul>
+
 {% else %}
     <p>no hay datos ingresados...</p>
 

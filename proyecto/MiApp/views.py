@@ -4,7 +4,7 @@ from .models import profesor, club_deportivo, alumno
 from .forms import club_deportivoForm, profesorForm, alumnoForm
 
 
-def mostrar_index(request):
+def index(request):
    return render(request, 'index.html')
 
 ######### BUSQUEDAS ##########
