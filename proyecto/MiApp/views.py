@@ -8,12 +8,16 @@ def mostrar_index(request):
    return render(request, 'index.html')
 
 
-def buscar_profesor(request):
+def buscar_deporte(request):
 
-   consulta_profesor = profesor(deporte=['deporte'], nombre=['nombre'], DNI=['DNI'])
-   
-   return render(request, 'consulta_profesor.html' ,{'profesor':[consulta_profesor]})
+   if request.GET.get('deporte', False):
+      deporte = request.GET['deporte']
+      profesor = profesor.objects.filter(profesor__icontains=profesor)
+      return render(request, 'consulta_profesor.html', {'deporte': deporte})
 
+   else:
+      respuesta = 'no hay datos ingresados...'
+      return render(request, 'consulta_profesor.html', {'respuesta': respuesta})
 
 
 def nuevo_deporte(request):
@@ -55,7 +59,6 @@ def nuevo_profesor(request):
       formulario_NP = profesorForm()
       
    return render(request, 'nuevo_profesor.html', {'formulario_NP': formulario_NP})
-
 
 def nuevo_alumno(request):
    if request.method == 'POST':
