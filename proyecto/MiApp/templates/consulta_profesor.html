@@ -1,13 +1,7 @@
-{% extends 'index.html' %}
-
-{% load static %}
-
-{% block codigoDinamico %} 
-
 <form action="" method="get"> 
 
    
-    <p>                                                 Consulta info. Deportes                                         </p>
+    <p>         Consulta info. PROFESORES              </p>
 
     
     <input type="text" name="deporte" id="deporte">
@@ -19,7 +13,7 @@
 
    <ul>
     {% for profesor in profesor %}
-        <li> deporte a cargo del profesor {{deporte}}/li>
+        <li> deporte a cargo del profesor {{deporte}} </li>
     {% endfor %}
    </ul>
 {% else %}
@@ -27,4 +21,3 @@
 
 {% endif %}   
 
-{% endblock %}
