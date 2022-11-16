@@ -12,7 +12,7 @@
     
     <input type="text" name="deporte" id="deporte">
   
-    <input type="button">
+    <input type='submit' value='enviar'></button> 
 </form>
 
 {% if  profesor %}
@@ -20,6 +20,7 @@
    <ul>
     {% for profesor in profesor %}
         <li> deporte a cargo del profesor {{deporte}}/li>
+    {% endfor %}
    </ul>
 {% else %}
     <p>no hay datos ingresados...</p>
